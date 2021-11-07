@@ -28,6 +28,14 @@ public class EmployeeController {
     public List<Employee> getEmployeeByDepartment(@PathVariable String department ){
         return empService.getEmployeeByDepartment(department);
     }
+    @GetMapping("/count")
+    public Long count(){
+        return empService.count();
+    }
+    @GetMapping("/exist/{id}")
+    public boolean exists(@PathVariable int id){
+        return empService.exists(id);
+    }
     @DeleteMapping("/{id}")
     public void deleteEmployeeById(@PathVariable int id){
         empService.deleteEmployeeById(id);

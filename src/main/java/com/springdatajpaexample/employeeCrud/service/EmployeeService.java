@@ -32,4 +32,11 @@ public class EmployeeService {
     public List<Employee> getEmployeeByDepartment(String department){
         return employeeRepository.findByDepartment(department);
     }
+
+    public Long count(){
+        return employeeRepository.count();
+    }
+    public boolean exists(int id){
+        return employeeRepository.existsById(id);
+    }
 }
